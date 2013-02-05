@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 ﻿C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\GeneratedInternalTypeHelper.g.cs
 
 FC:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\MainWindow.xaml;;
 
+=======
+﻿
+
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\MainWindow.xaml;;
+
+>>>>>>> Making filesindirectory and path global variables. Fixing stemplingsur-wpf import.

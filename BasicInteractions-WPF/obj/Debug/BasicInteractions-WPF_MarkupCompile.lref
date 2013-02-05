@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FC:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\App.xaml;;
 FC:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Controls\ControlStyles.xaml;;
@@ -10,3 +11,17 @@ FC:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\View
 FC:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\StoryControl.xaml;;
 FC:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\VoiceInstructionControl.xaml;;
 
+=======
+﻿C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\App.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Controls\ControlStyles.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\MainWindow.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\AttractControl.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\Introduction.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\StorySelectionControl.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\CategorySelectionControl.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\HandVisualizer.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\StoryControl.xaml;;
+FC:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\Views\VoiceInstructionControl.xaml;;
+
+>>>>>>> Making filesindirectory and path global variables. Fixing stemplingsur-wpf import.

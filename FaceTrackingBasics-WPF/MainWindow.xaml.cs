@@ -34,6 +34,8 @@ namespace FaceTrackingBasics
         private ColorImageFormat currentColorImageFormat = ColorImageFormat.Undefined;
         private int i = 0;
         private SpeechRecognitionEngine speechEngine;
+        private string myPhotos;
+        private string[] filesindirectory;
 
         private enum Commands
         {
@@ -52,6 +54,9 @@ namespace FaceTrackingBasics
             faceTrackingViewer.SetBinding(FaceTrackingViewer.KinectProperty, faceTrackingViewerBinding);
 
             sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
+            
+            myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            filesindirectory = Directory.GetFiles(myPhotos, "*.png");
 
             sensorChooser.Start();
         }
@@ -232,7 +237,9 @@ namespace FaceTrackingBasics
         private void PersonUt()
         {
             ColorImage.Visibility = Visibility.Hidden;
-            string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
+           // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
+            Console.WriteLine("ut");
+
             if (filesindirectory.Length == 0)
             {
                 MessageBox.Show("No photos in folder.");
@@ -296,9 +303,11 @@ namespace FaceTrackingBasics
             encoder.Frames.Add(BitmapFrame.Create(renderBitmap));
             string time = System.DateTime.Now.ToString("yyyyMMddHHmmss", CultureInfo.CurrentUICulture.DateTimeFormat);
 
-            //string myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+          
 
-            string path = Path.Combine(@"C:\Users\RIKARD\Pictures\KinectBilder", "Person logged inn @-" + time + ".png");
+            //string path = Path.Combine(@"C:\Users\RIKARD\Pictures\KinectBilder", "Person logged inn @-" + time + ".png");
+
+            string path = Path.Combine(myPhotos, "Person logged inn @-" + time + ".png");
 
             // write the new file to disk
             try
@@ -322,7 +331,7 @@ namespace FaceTrackingBasics
 
         private void LoggOutClicked(object sender, RoutedEventArgs e)
         {
-      
+            PersonUt();
 
         }
 
@@ -330,7 +339,7 @@ namespace FaceTrackingBasics
         {
             
 
-            var filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
+            //var filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
             if (i == filesindirectory.Length-1)
             {
                 i = -1;
@@ -363,7 +372,7 @@ namespace FaceTrackingBasics
 
         private void ForgjeClicked(object sender, RoutedEventArgs e)
         {
-            string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
+           // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
             if (i == 0)
             {
                 //Må kanskje være -1
