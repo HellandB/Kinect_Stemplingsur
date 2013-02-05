@@ -1,2 +1,0 @@
-C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\bin\x86\Debug\FaceTrackingBasics-WPF.exe.config
-C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\obj\Win32\Debug\FaceTrackingBasics-WPF.csprojResolveAssemblyReference.cache

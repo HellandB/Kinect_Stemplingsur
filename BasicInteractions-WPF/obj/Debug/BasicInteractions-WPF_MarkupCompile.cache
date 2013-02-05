@@ -1,0 +1,20 @@
+﻿BasicInteractions-WPF
+
+
+winexe
+C#
+.cs
+C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\BasicInteractions-WPF\obj\Debug\
+Microsoft.Samples.Kinect.BasicInteractions
+none
+false
+DEBUG;TRACE
+C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\BasicInteractions-WPF\App.xaml
+10-1671278392
+27195919286
+29-2139647647
+121036984917
+Controls\ControlStyles.xaml;MainWindow.xaml;Resources\Colors.xaml;Views\AttractControl.xaml;Views\Introduction.xaml;Views\StorySelectionControl.xaml;Views\CategorySelectionControl.xaml;Views\HandVisualizer.xaml;Views\StoryControl.xaml;Views\VoiceInstructionControl.xaml;
+
+False
+
