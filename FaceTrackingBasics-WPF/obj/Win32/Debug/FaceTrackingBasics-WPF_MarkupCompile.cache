@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\FaceTrackingBasics-WPF\obj\Win32\Debug\
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\
 FaceTrackingBasics
 none
 false
 DEBUG;TRACE
-C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\FaceTrackingBasics-WPF\App.xaml
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\App.xaml
 3-1277811618
 
 7982474748
-19-98090300
+191760686516
 FaceTrackingViewer.xaml;MainWindow.xaml;Views\StemmeKontroll.xaml;
 
 False
