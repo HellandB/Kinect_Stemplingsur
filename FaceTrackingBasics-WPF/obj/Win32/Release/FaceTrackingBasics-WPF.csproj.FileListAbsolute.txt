@@ -1,1 +1,0 @@
-C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\FaceTrackingBasics-WPF\bin\x86\Release\FaceTrackingBasics-WPF.exe.config
