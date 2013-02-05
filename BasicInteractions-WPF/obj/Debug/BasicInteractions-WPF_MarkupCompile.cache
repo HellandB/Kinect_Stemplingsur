@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿BasicInteractions-WPF
 
 
@@ -19,25 +18,3 @@ Controls\ControlStyles.xaml;MainWindow.xaml;Resources\Colors.xaml;Views\AttractC
 
 False
 
-=======
-﻿BasicInteractions-WPF
-
-
-winexe
-C#
-.cs
-C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\obj\Debug\
-Microsoft.Samples.Kinect.BasicInteractions
-none
-false
-DEBUG;TRACE
-C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\BasicInteractions-WPF\App.xaml
-10-1671278392
-27195919286
-29-2139647647
-121015356706
-Controls\ControlStyles.xaml;MainWindow.xaml;Resources\Colors.xaml;Views\AttractControl.xaml;Views\Introduction.xaml;Views\StorySelectionControl.xaml;Views\CategorySelectionControl.xaml;Views\HandVisualizer.xaml;Views\StoryControl.xaml;Views\VoiceInstructionControl.xaml;
-
-False
-
->>>>>>> Making filesindirectory and path global variables. Fixing stemplingsur-wpf import.

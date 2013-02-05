@@ -10,3 +10,15 @@ C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\Micro
 C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.csproj.GenerateResource.Cache
 C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.dll
 C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.6.0\Samples\C#\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.dll.CodeAnalysisLog.xml
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.dll.lastcodeanalysissucceeded
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\KinectSensorChooserUI.baml
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\KinectSensorChooserUI.g.cs
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit_MarkupCompile.cache
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.g.resources
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.Properties.Resources.resources
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.csproj.GenerateResource.Cache
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.pdb

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿FaceTrackingBasics-WPF
 
 
@@ -19,25 +18,3 @@ FaceTrackingViewer.xaml;MainWindow.xaml;Views\StemmeKontroll.xaml;
 
 True
 
-=======
-﻿FaceTrackingBasics-WPF
-
-
-winexe
-C#
-.cs
-C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\
-FaceTrackingBasics
-none
-false
-DEBUG;TRACE
-C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\App.xaml
-3-1277811618
-
-8-2106862113
-19-703883106
-FaceTrackingViewer.xaml;MainWindow.xaml;Views\StemmeKontroll.xaml;
-
-True
-
->>>>>>> Making filesindirectory and path global variables. Fixing stemplingsur-wpf import.

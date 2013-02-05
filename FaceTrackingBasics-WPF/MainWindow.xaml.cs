@@ -54,9 +54,8 @@ namespace FaceTrackingBasics
             faceTrackingViewer.SetBinding(FaceTrackingViewer.KinectProperty, faceTrackingViewerBinding);
 
             sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
-            
-            myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            filesindirectory = Directory.GetFiles(myPhotos, "*.png");
+            getDirectory();
+          
 
             sensorChooser.Start();
         }
@@ -75,6 +74,7 @@ namespace FaceTrackingBasics
             }
             return null;
         }
+
 
         private void SensorChooserOnKinectChanged(object sender, KinectChangedEventArgs kinectChangedEventArgs)
         {
@@ -204,6 +204,11 @@ namespace FaceTrackingBasics
         {
 //            ClearRecognitionHighlights();
         }
+        private void getDirectory()
+        {
+            myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            filesindirectory = Directory.GetFiles(myPhotos, "*.png");
+        }
 
 
         private void KinectSensorOnAllFramesReady(object sender, AllFramesReadyEventArgs allFramesReadyEventArgs)
@@ -238,7 +243,7 @@ namespace FaceTrackingBasics
         {
             ColorImage.Visibility = Visibility.Hidden;
            // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
-            Console.WriteLine("ut");
+            getDirectory();
 
             if (filesindirectory.Length == 0)
             {

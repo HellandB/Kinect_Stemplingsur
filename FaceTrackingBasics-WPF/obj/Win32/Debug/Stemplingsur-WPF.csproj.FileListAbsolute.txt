@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\bin\x86\Debug\FaceTrackingBasics-WPF.exe.config
 C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics-WPF.exe
 C:\Users\RIKARD\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics-WPF.pdb
@@ -108,4 +107,3 @@ C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj
 C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics-WPF.g.resources
 C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics.Properties.Resources.resources
 C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\FaceTrackingBasics-WPF\obj\Win32\Debug\Stemplingsur-WPF.csproj.GenerateResource.Cache
->>>>>>> Making filesindirectory and path global variables. Fixing stemplingsur-wpf import.

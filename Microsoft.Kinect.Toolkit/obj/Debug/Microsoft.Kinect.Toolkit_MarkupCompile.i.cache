@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿Microsoft.Kinect.Toolkit
 
 
@@ -19,25 +18,3 @@ KinectSensorChooserUI.xaml;
 
 False
 
-=======
-﻿Microsoft.Kinect.Toolkit
-
-
-library
-C#
-.cs
-C:\Users\Helland\Documents\GitHub\Kinect_Stemplingsur\Microsoft.Kinect.Toolkit\obj\Debug\
-Microsoft.Kinect.Toolkit
-none
-false
-CODE_ANALYSIS;DEBUG;TRACE
-
-1-1341555513
-
-12385057970
-9-2090293299
-KinectSensorChooserUI.xaml;
-
-False
-
->>>>>>> Making filesindirectory and path global variables. Fixing stemplingsur-wpf import.
