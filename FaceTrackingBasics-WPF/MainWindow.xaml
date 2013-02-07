@@ -37,5 +37,8 @@
             <TextBlock DockPanel.Dock="Right" Margin="0 0 -1 0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="84" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="24" Width="228">Kinect Stemplingsur</TextBlock>
             <views:StemmeKontroll DockPanel.Dock="Top" x:Name="Sk"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="70"   />
         </DockPanel>
+        <Ellipse Height="80" Width="80" Name="Head" Canvas.Left="495" Canvas.Top="20" Fill="Red" />
+        <Ellipse Height="80" Width="80" Name="LeftHand" Canvas.Left="495" Canvas.Top="20" Fill="Red" />
+        <Ellipse Height="80" Width="80" Name="RightHand" Canvas.Left="495" Canvas.Top="20" Fill="Red" />
     </Grid>
 </Window>
