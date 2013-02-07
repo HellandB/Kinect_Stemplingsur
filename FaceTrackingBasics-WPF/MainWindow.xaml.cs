@@ -280,8 +280,8 @@ namespace FaceTrackingBasics
             if (handright.Position.Y > head.Position.Y)
             {
 
-                MessageBox.Show("hipcenter y" + hipcenter.Position.X + "hipcenter y" + hipcenter.Position.Y);
-                //MessageBox.Show("handleft x" + handleft.Position.X + "handleft y" + handleft.Position.Y);
+                //MessageBox.Show("hipcenter y" + hipcenter.Position.X + "hipcenter y" + hipcenter.Position.Y);
+                MessageBox.Show("handleft x" + handleft.Position.X + "handleft y" + handleft.Position.Y);
             }
 
             //if (handright.Position.X < hipcenter.Position.X)
