@@ -40,7 +40,7 @@ namespace FaceTrackingBasics
         private enum Commands
         {
             Inn,
-            Out
+            Ut
         }
 
         private List<Span> recognitionSpans;
@@ -135,7 +135,7 @@ namespace FaceTrackingBasics
                 speechEngine = new SpeechRecognitionEngine(ri);
                 var directions = new Choices();
                 directions.Add(new SemanticResultValue("inn", "INN"));
-                directions.Add(new SemanticResultValue("out", "OUT"));
+                directions.Add(new SemanticResultValue("ut", "UT"));
 
                 var gb = new GrammarBuilder {Culture = ri.Culture};
                 gb.Append(directions);
@@ -185,7 +185,7 @@ namespace FaceTrackingBasics
         /// Handler for recognized speech events.
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            const double ConfidenceThreshold = 0.7;
+            const double ConfidenceThreshold = 0.4;
 //            ClearRecognitionHighlights();
             if (e.Result.Confidence >= ConfidenceThreshold)
             {
@@ -194,7 +194,7 @@ namespace FaceTrackingBasics
                    case"INN":
                        PersonInn();                    
                        break;
-                   case"OUT":
+                   case"UT":
                        PersonUt();
                        break;
                } 

@@ -8,7 +8,6 @@ namespace FaceTrackingBasics.Views
     using System.Windows.Media;
     using System.Windows.Media.Animation;
     using Microsoft.Speech.Recognition;
-
     using Microsoft.Kinect;
     /// <summary>
     /// Interaction logic for StemmeKontroll.xaml
