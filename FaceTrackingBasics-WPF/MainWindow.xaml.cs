@@ -13,6 +13,8 @@ namespace FaceTrackingBasics
     using System;
     using System.Globalization;
     using System.IO;
+    using System.Linq;
+    using System.Windows.Controls;
     using System.Windows;
     using System.Windows.Data;
     using System.Windows.Media;
@@ -36,6 +38,11 @@ namespace FaceTrackingBasics
         private SpeechRecognitionEngine speechEngine;
         private string myPhotos;
         private string[] filesindirectory;
+
+        //gestures
+        const int skeletonCount = 6;
+        Skeleton[] allSkeletons = new Skeleton[skeletonCount];
+        bool closing = false;
 
         private enum Commands
         {
@@ -210,15 +217,21 @@ namespace FaceTrackingBasics
             filesindirectory = Directory.GetFiles(myPhotos, "*.png");
         }
 
+   
 
         private void KinectSensorOnAllFramesReady(object sender, AllFramesReadyEventArgs allFramesReadyEventArgs)
         {
+          
+
             using (var colorImageFrame = allFramesReadyEventArgs.OpenColorImageFrame())
             {
                 if (colorImageFrame == null)
                 {
                     return;
                 }
+                
+                
+
 
                 // Make a copy of the color frame for displaying.
                 var haveNewFormat = this.currentColorImageFormat != colorImageFrame.Format;
@@ -238,7 +251,121 @@ namespace FaceTrackingBasics
                     colorImageFrame.Width * Bgr32BytesPerPixel,
                     0);
             }
+
+            using (var skeletonFrame = allFramesReadyEventArgs.OpenSkeletonFrame())
+            {
+           
+                //_______SKeleton_________
+               
+              
+                //Get a skeleton
+                Skeleton first = GetFirstSkeleton(allFramesReadyEventArgs);
+                if (first != null)
+                {
+                    ProcessGesture(first.Joints[JointType.Head], first.Joints[JointType.HandLeft], first.Joints[JointType.HandRight]);
+                }
+              
+
+                GetCameraPoint(first, allFramesReadyEventArgs);
+
+                //set scaled position
+                //ScalePosition(Head, first.Joints[JointType.Head]);
+                //ScalePosition(LeftHand, first.Joints[JointType.HandLeft]);
+                //ScalePosition(RightHand, first.Joints[JointType.HandRight]);
+
+            }
+            
         }
+
+
+        private void ProcessGesture(Joint head, Joint handleft, Joint handright)
+        {
+            if (handright.Position.Y > head.Position.Y)
+            {
+                MessageBox.Show("Your hand is above your head");
+            }
+
+
+        }
+
+
+        Skeleton GetFirstSkeleton(AllFramesReadyEventArgs e)
+        {
+            using (SkeletonFrame skeletonFrameData = e.OpenSkeletonFrame())
+            {
+                if (skeletonFrameData == null)
+                {
+                    return null;
+                }
+
+
+                skeletonFrameData.CopySkeletonDataTo(allSkeletons);
+
+                //get the first tracked skeleton
+                Skeleton first = (from s in allSkeletons
+                                  where s.TrackingState == SkeletonTrackingState.Tracked
+                                  select s).FirstOrDefault();
+
+                return first;
+            }
+        }
+
+        void GetCameraPoint(Skeleton first, AllFramesReadyEventArgs e)
+        {
+
+            using (DepthImageFrame depth = e.OpenDepthImageFrame())
+            {
+                if (depth == null ||
+                    sensorChooser.Kinect == null)
+                {
+                    return;
+                }
+
+                if (first != null)
+                {
+                    //Map a joint location to a point on the depth map
+                    //head
+                    DepthImagePoint headDepthPoint =
+                        depth.MapFromSkeletonPoint(first.Joints[JointType.Head].Position);
+                    //left hand
+                    DepthImagePoint leftDepthPoint =
+                        depth.MapFromSkeletonPoint(first.Joints[JointType.HandLeft].Position);
+                    //right hand
+                    DepthImagePoint rightDepthPoint =
+                        depth.MapFromSkeletonPoint(first.Joints[JointType.HandRight].Position);
+
+
+                    //Map a depth point to a point on the color image
+                    //head
+                    ColorImagePoint headColorPoint =
+                        depth.MapToColorImagePoint(headDepthPoint.X, headDepthPoint.Y,
+                        ColorImageFormat.RgbResolution640x480Fps30);
+                    //left hand
+                    ColorImagePoint leftColorPoint =
+                        depth.MapToColorImagePoint(leftDepthPoint.X, leftDepthPoint.Y,
+                        ColorImageFormat.RgbResolution640x480Fps30);
+                    //right hand
+                    ColorImagePoint rightColorPoint =
+                        depth.MapToColorImagePoint(rightDepthPoint.X, rightDepthPoint.Y,
+                        ColorImageFormat.RgbResolution640x480Fps30);
+                
+
+                //Set location
+                CameraPosition(Head, headColorPoint);
+                CameraPosition(LeftHand, leftColorPoint);
+                CameraPosition(RightHand, rightColorPoint);
+                }
+            }
+        }
+        private void CameraPosition(FrameworkElement element, ColorImagePoint point)
+        {
+            //Divide by 2 for width and height so point is right in the middle 
+            // instead of in top/left corner
+            Canvas.SetLeft(element, point.X - element.Width / 2);
+            Canvas.SetTop(element, point.Y - element.Height / 2);
+
+        }
+
         private void PersonUt()
         {
             ColorImage.Visibility = Visibility.Hidden;
