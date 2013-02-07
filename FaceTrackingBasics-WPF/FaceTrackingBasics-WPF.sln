@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Kinect.Toolkit", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Kinect.Toolkit.FaceTracking", "..\Microsoft.Kinect.Toolkit.FaceTracking\Microsoft.Kinect.Toolkit.FaceTracking.csproj", "{1BCF9CEE-DF01-430E-B49D-41A9A88963EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicInteractions-WPF", "..\BasicInteractions-WPF\BasicInteractions-WPF.csproj", "{2E073D57-EA4E-496D-A22F-DA2E1961262C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechBasics-WPF", "..\SpeechBasics-WPF\SpeechBasics-WPF.csproj", "{9BE50D83-C55B-4836-AEE5-A076C8C27173}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stemplingsur-WPF", "Stemplingsur-WPF.csproj", "{8FB2DEA6-9900-4FC5-87E4-B54188F62884}"
@@ -53,18 +51,6 @@ Global
 		{1BCF9CEE-DF01-430E-B49D-41A9A88963EB}.Release|Win32.Build.0 = Release|Win32
 		{1BCF9CEE-DF01-430E-B49D-41A9A88963EB}.Release|x64.ActiveCfg = Release|x64
 		{1BCF9CEE-DF01-430E-B49D-41A9A88963EB}.Release|x64.Build.0 = Release|x64
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Release|Win32.ActiveCfg = Release|Any CPU
-		{2E073D57-EA4E-496D-A22F-DA2E1961262C}.Release|x64.ActiveCfg = Release|Any CPU
 		{9BE50D83-C55B-4836-AEE5-A076C8C27173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9BE50D83-C55B-4836-AEE5-A076C8C27173}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BE50D83-C55B-4836-AEE5-A076C8C27173}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

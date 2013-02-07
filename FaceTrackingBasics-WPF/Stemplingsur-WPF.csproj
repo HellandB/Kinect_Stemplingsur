@@ -142,10 +142,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BasicInteractions-WPF\BasicInteractions-WPF.csproj">
-      <Project>{2e073d57-ea4e-496d-a22f-da2e1961262c}</Project>
-      <Name>BasicInteractions-WPF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Microsoft.Kinect.Toolkit.FaceTracking\Microsoft.Kinect.Toolkit.FaceTracking.csproj">
       <Project>{1BCF9CEE-DF01-430E-B49D-41A9A88963EB}</Project>
       <Name>Microsoft.Kinect.Toolkit.FaceTracking</Name>
