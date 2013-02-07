@@ -35,6 +35,7 @@ namespace FaceTrackingBasics
         private byte[] colorImageData;
         private ColorImageFormat currentColorImageFormat = ColorImageFormat.Undefined;
         private int i = 0;
+        private int logginNr = 1;
         private SpeechRecognitionEngine speechEngine;
         private string myPhotos;
         private string[] filesindirectory;
@@ -407,6 +408,8 @@ namespace FaceTrackingBasics
             {
                 MessageBox.Show("Saving of file failed.");
             }
+            MyText.Text = "Loggin nr: " + logginNr;
+            logginNr++;
         }
 
         private void ButtonClicked(object sender, RoutedEventArgs e)

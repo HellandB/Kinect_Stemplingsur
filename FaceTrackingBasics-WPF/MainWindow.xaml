@@ -10,7 +10,7 @@
 
     <Window.Resources>
         <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e"/>
-
+        <SolidColorBrush x:Key="MediumBlueBrush" Color="#ff00BCF2"/>
         <Style TargetType="{x:Type Image}">
             <Setter Property="SnapsToDevicePixels" Value="True"/>
         </Style>
@@ -34,7 +34,7 @@
         </Viewbox>
         <DockPanel Grid.Row="0" Margin="-13,0,0,20" Width="755" HorizontalAlignment="Left">
             <Image DockPanel.Dock="Left" VerticalAlignment="Top" Source="Images\Logo.png" Stretch="None" Margin="0 0 0 0" Width="81" Height="84"/>
-            <TextBlock DockPanel.Dock="Right" Margin="0 0 -1 0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="84" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="24" Width="228">Kinect Stemplingsur</TextBlock>
+            <TextBlock x:Name="MyText" DockPanel.Dock="Right" Margin="0 0 -1 0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="84" Foreground= "{StaticResource MediumBlueBrush}" FontFamily="Segoe UI" FontSize="24" Width="228"></TextBlock>
             <views:StemmeKontroll DockPanel.Dock="Top" x:Name="Sk"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="70"   />
         </DockPanel>
        
