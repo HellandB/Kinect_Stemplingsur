@@ -323,6 +323,7 @@ namespace FaceTrackingBasics
         private void PersonUt()
         {
             ColorImage.Visibility = Visibility.Hidden;
+           
            // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
             getDirectory();
 
@@ -339,6 +340,7 @@ namespace FaceTrackingBasics
                 bi.EndInit();
                 Bilde1.Source = bi;
                 Bilde1.Visibility = Visibility.Visible;
+                
             }
             catch (NotSupportedException)
             {
