@@ -5,38 +5,75 @@
         xmlns:local="clr-namespace:FaceTrackingBasics" xmlns:views="clr-namespace:FaceTrackingBasics.Views"
         Title="Face Tracking Basics"
         Closed="WindowClosed"
-        Height="550" Width="770" 
+        Width="1024"  Height="768" 
         >
 
     <Window.Resources>
         <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e"/>
+<<<<<<< HEAD
         <SolidColorBrush x:Key="MediumBlueBrush" Color="#ff00BCF2"/>
+=======
+>>>>>>> origin/gui
         <Style TargetType="{x:Type Image}">
             <Setter Property="SnapsToDevicePixels" Value="True"/>
         </Style>
     </Window.Resources>
 
-    <Grid Name="LayoutGrid" Margin="10 0 10 10">
-      
-    
-        <Viewbox Stretch="Fill" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.RowSpan="2">
-            <Grid Name="MainGrid" Width="770" Height="550">
-                <Image Name="ColorImage" Margin="0,0,0,0"/>
-                <local:FaceTrackingViewer x:Name="faceTrackingViewer" Margin="-19,0,0,0" />
-                <Button x:Name="LoggInnKnapp" Content="Logg Inn" HorizontalAlignment="Left" Margin="-29,493,0,-18" VerticalAlignment="Top" Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="ButtonClicked" Height="75"/>
-                <Button x:Name="LoggUtKnapp" Content="Logg Ut" HorizontalAlignment="Left" Margin="445,493,-33,-18" VerticalAlignment="Top" Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="LoggOutClicked" Height="75"/>
-                <Image x:Name="Bilde1" Visibility="Hidden" HorizontalAlignment="Left" Height="499" Margin="10,51,0,0" VerticalAlignment="Top" Width="760" />
-                <Button x:Name="NesteButton" Content="Neste" HorizontalAlignment="Left" Margin="498,430,0,0" VerticalAlignment="Bottom" Width="75" Visibility="Hidden" Click="NesteClicked"/>
-                <Button x:Name="ForgjeButton" Content="Forgje" HorizontalAlignment="Left" Margin="366,430,0,0" VerticalAlignment="Bottom" Width="75" Visibility="Hidden" Click="ForgjeClicked"/>
-                <Button x:Name="LoggMeOut" Content="Logg ut" HorizontalAlignment="Left" Margin="220,430,0,0" VerticalAlignment="Bottom" Width="75" Visibility="Hidden" Click="LoggMeOutClicked"/>
-                <Button x:Name="AvbrytButton" Content="Avbryt" HorizontalAlignment="Left" Margin="57,430,0,0" VerticalAlignment="Bottom" Width="75" Visibility="Hidden" Click="AvbrytClicked"/>
+    <Grid Name="LayoutGrid" Width="Auto" Height="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column ="0" >
+            <Grid  Width="1018" >
+                <views:StemmeKontroll x:Name="Sk"  Margin="361,15,500,39.8"  />
+                <Image Width="100" Height="50"  Source="Images\Logo.png" Stretch="None" Margin="29,46,889,45"/>
+                <TextBlock Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="24" Margin="774,46,29,58"><Run Text="Kinect Stemplings"/><Run Language="nb-no" Text="ur"/></TextBlock>
             </Grid>
+        </DockPanel>
+
+        <DockPanel  Grid.Row="1" Width="500" Height="500" >
+            <Grid>
+                <Image x:Name="Bilde1" Visibility="Hidden"  Width="Auto" Height="Auto" HorizontalAlignment="Center"  VerticalAlignment="Center"   />
+                <Image Name="ColorImage"  Width="auto" Height="auto"   />
+                <local:FaceTrackingViewer x:Name="faceTrackingViewer"  Width="auto" Height="auto"  />
+            </Grid>
+<<<<<<< HEAD
         </Viewbox>
         <DockPanel Grid.Row="0" Margin="-13,0,0,20" Width="755" HorizontalAlignment="Left">
             <Image DockPanel.Dock="Left" VerticalAlignment="Top" Source="Images\Logo.png" Stretch="None" Margin="0 0 0 0" Width="81" Height="84"/>
             <TextBlock x:Name="MyText" DockPanel.Dock="Right" Margin="0 0 -1 0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="84" Foreground= "{StaticResource MediumBlueBrush}" FontFamily="Segoe UI" FontSize="24" Width="228"></TextBlock>
             <views:StemmeKontroll DockPanel.Dock="Top" x:Name="Sk"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="70"   />
         </DockPanel>
+=======
+
+        </DockPanel>
+
+        <DockPanel Grid.Row="2" Grid.Column="0" Width="1010" Height="Auto"  >
+            <Button x:Name="LoggInnKnapp" Content="Logg Inn" DockPanel.Dock="Left" Margin="0,0,0,0"  Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="ButtonClicked" Height="75"/>
+            <Button x:Name="LoggUtKnapp" Content="Logg Ut"  DockPanel.Dock="Right" Margin="0,0,0,0"  Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="LoggOutClicked" Height="75"/>
+            
+            <Grid>
+                <Button x:Name="ForgjeButton" Content="Forgje"  Width="75" Height="25" Visibility="Visible" Click="ForgjeClicked" Margin="29,19,188.8,35.2"/>
+                <Button x:Name="LoggMeOut"  Content="Logg ut"   Width="75" Height="25" Visibility="Visible" Click="LoggMeOutClicked" Margin="29,44,188.8,10.2"/>
+                <Button x:Name="AvbrytButton" Content="Avbryt"    Width="75" Height="25" Visibility="Visible" Click="AvbrytClicked" Margin="190,44,27.8,10.2"/>
+                <Button x:Name="NesteButton" Content="Neste"      Width="75" Height="25" Visibility="Visible" Click="NesteClicked" Margin="190,19,27.8,35.2"/>
+            </Grid>
+           
+        </DockPanel>
+
+       
+           
+   
+
+        
+>>>>>>> origin/gui
        
     </Grid>
 </Window>

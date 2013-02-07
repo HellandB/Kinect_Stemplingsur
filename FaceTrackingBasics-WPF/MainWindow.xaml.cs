@@ -270,6 +270,7 @@ namespace FaceTrackingBasics
                         );
                 }
             }     
+<<<<<<< HEAD
         }
 
         // Adding the Gestures
@@ -297,6 +298,35 @@ namespace FaceTrackingBasics
 
         }
 
+=======
+        }
+
+        // Adding the Gestures
+        private void ProcessGesture(Joint head, Joint handleft, Joint handright, Joint hipcenter)
+        {
+            
+           
+
+            if (handright.Position.Y > head.Position.Y)
+            {
+
+                //MessageBox.Show("hipcenter y" + hipcenter.Position.X + "hipcenter y" + hipcenter.Position.Y);
+                MessageBox.Show("handleft x" + handleft.Position.X + "handleft y" + handleft.Position.Y);
+            }
+
+            //if (handright.Position.X < hipcenter.Position.X)
+            //{
+            //    MessageBox.Show("Your right hand is over spine");
+            //}
+
+            // if (handleft.Position.X > hipcenter.Position.X)
+            // {
+            //     MessageBox.Show("Your left hand is over spine");
+            // }
+
+        }
+
+>>>>>>> origin/gui
         //Getting the first skeleton
         Skeleton GetFirstSkeleton(AllFramesReadyEventArgs e)
         {
@@ -324,6 +354,7 @@ namespace FaceTrackingBasics
         private void PersonUt()
         {
             ColorImage.Visibility = Visibility.Hidden;
+           
            // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
             getDirectory();
 
@@ -340,6 +371,7 @@ namespace FaceTrackingBasics
                 bi.EndInit();
                 Bilde1.Source = bi;
                 Bilde1.Visibility = Visibility.Visible;
+                
             }
             catch (NotSupportedException)
             {
