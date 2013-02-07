@@ -10,7 +10,6 @@
 
     <Window.Resources>
         <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e"/>
-
         <Style TargetType="{x:Type Image}">
             <Setter Property="SnapsToDevicePixels" Value="True"/>
         </Style>
@@ -20,13 +19,13 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-
+      
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
+        
         <DockPanel Grid.Row="0" Grid.Column ="0" >
             <Grid  Width="1018" >
                 <views:StemmeKontroll x:Name="Sk"  Margin="361,15,500,39.8"  />
@@ -42,28 +41,17 @@
                 <Image Name="ColorImage"  Width="auto" Height="auto"   />
                 <local:FaceTrackingViewer x:Name="faceTrackingViewer"  Width="auto" Height="auto"  />
             </Grid>
-
         </DockPanel>
-
+        
         <DockPanel Grid.Row="2" Grid.Column="0" Width="1010" Height="Auto"  >
             <Button x:Name="LoggInnKnapp" Content="Logg Inn" DockPanel.Dock="Left" Margin="0,0,0,0"  Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="ButtonClicked" Height="75"/>
-            <Button x:Name="LoggUtKnapp" Content="Logg Ut"  DockPanel.Dock="Right" Margin="0,0,0,0"  Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="LoggOutClicked" Height="75"/>
-            
+            <Button x:Name="LoggUtKnapp" Content="Logg Ut"  DockPanel.Dock="Right" Margin="0,0,0,0"  Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="LoggOutClicked" Height="75"/>    
             <Grid>
-                <Button x:Name="ForgjeButton" Content="Forgje"  Width="75" Height="25" Visibility="Visible" Click="ForgjeClicked" Margin="29,19,188.8,35.2"/>
-                <Button x:Name="LoggMeOut"  Content="Logg ut"   Width="75" Height="25" Visibility="Visible" Click="LoggMeOutClicked" Margin="29,44,188.8,10.2"/>
-                <Button x:Name="AvbrytButton" Content="Avbryt"    Width="75" Height="25" Visibility="Visible" Click="AvbrytClicked" Margin="190,44,27.8,10.2"/>
-                <Button x:Name="NesteButton" Content="Neste"      Width="75" Height="25" Visibility="Visible" Click="NesteClicked" Margin="190,19,27.8,35.2"/>
+                <Button x:Name="ForgjeButton" Content="Forgje"  Width="75" Height="25" Visibility="Hidden" Click="ForgjeClicked" Margin="29,19,188.8,35.2"/>
+                <Button x:Name="LoggMeOut"  Content="Logg ut"   Width="75" Height="25" Visibility="Hidden" Click="LoggMeOutClicked" Margin="29,44,188.8,10.2"/>
+                <Button x:Name="AvbrytButton" Content="Avbryt"    Width="75" Height="25" Visibility="Hidden" Click="AvbrytClicked" Margin="190,44,27.8,10.2"/>
+                <Button x:Name="NesteButton" Content="Neste"      Width="75" Height="25" Visibility="Hidden" Click="NesteClicked" Margin="190,19,27.8,35.2"/>
             </Grid>
-           
         </DockPanel>
-
-       
-           
-   
-
-        
-
-       
     </Grid>
 </Window>
