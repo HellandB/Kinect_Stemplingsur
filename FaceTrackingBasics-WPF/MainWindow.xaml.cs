@@ -35,6 +35,7 @@ namespace FaceTrackingBasics
         private byte[] colorImageData;
         private ColorImageFormat currentColorImageFormat = ColorImageFormat.Undefined;
         private int i = 0;
+        private int logginNr = 1;
         private SpeechRecognitionEngine speechEngine;
         private string myPhotos;
         private string[] filesindirectory;
@@ -46,7 +47,7 @@ namespace FaceTrackingBasics
         private enum Commands
         {
             Inn,
-            Out
+            Ut
         }
 
         private List<Span> recognitionSpans;
@@ -141,7 +142,7 @@ namespace FaceTrackingBasics
                 speechEngine = new SpeechRecognitionEngine(ri);
                 var directions = new Choices();
                 directions.Add(new SemanticResultValue("inn", "INN"));
-                directions.Add(new SemanticResultValue("out", "OUT"));
+                directions.Add(new SemanticResultValue("ut", "UT"));
 
                 var gb = new GrammarBuilder {Culture = ri.Culture};
                 gb.Append(directions);
@@ -191,7 +192,7 @@ namespace FaceTrackingBasics
         /// Handler for recognized speech events.
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            const double ConfidenceThreshold = 0.7;
+            const double ConfidenceThreshold = 0.4;
 //            ClearRecognitionHighlights();
             if (e.Result.Confidence >= ConfidenceThreshold)
             {
@@ -200,7 +201,7 @@ namespace FaceTrackingBasics
                    case"INN":
                        PersonInn();                    
                        break;
-                   case"OUT":
+                   case"UT":
                        PersonUt();
                        break;
                } 
@@ -280,8 +281,10 @@ namespace FaceTrackingBasics
             if (handright.Position.Y > head.Position.Y)
             {
 
+
                 //MessageBox.Show("hipcenter y" + hipcenter.Position.X + "hipcenter y" + hipcenter.Position.Y);
                 MessageBox.Show("handleft x" + handleft.Position.X + "handleft y" + handleft.Position.Y);
+
             }
 
             //if (handright.Position.X < hipcenter.Position.X)
@@ -409,6 +412,8 @@ namespace FaceTrackingBasics
             {
                 MessageBox.Show("Saving of file failed.");
             }
+            MyText.Text = "Loggin nr: " + logginNr;
+            logginNr++;
         }
 
         private void ButtonClicked(object sender, RoutedEventArgs e)

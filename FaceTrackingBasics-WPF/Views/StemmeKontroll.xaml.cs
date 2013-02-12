@@ -8,7 +8,6 @@ namespace FaceTrackingBasics.Views
     using System.Windows.Media;
     using System.Windows.Media.Animation;
     using Microsoft.Speech.Recognition;
-    using Microsoft.Samples.Kinect.BasicInteractions;
     using Microsoft.Kinect;
     /// <summary>
     /// Interaction logic for StemmeKontroll.xaml
@@ -66,7 +65,7 @@ namespace FaceTrackingBasics.Views
             this.animateSpeechDetected = this.Resources["SpeechReco"] as Storyboard;
 
            
-            KinectController.SpeechDetected += this.OnSpeechDetected;
+//            KinectController.SpeechDetected += this.OnSpeechDetected;
         }
 
 
