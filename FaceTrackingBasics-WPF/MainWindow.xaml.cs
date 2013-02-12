@@ -6,6 +6,7 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Documents;
 
 namespace FaceTrackingBasics
@@ -39,7 +40,8 @@ namespace FaceTrackingBasics
         private SpeechRecognitionEngine speechEngine;
         private string myPhotos;
         private string[] filesindirectory;
-
+        private DateTime startTime = DateTime.UtcNow;
+        private static Boolean PictureChanged = false;
         //gestures
         const int skeletonCount = 6;
         Skeleton[] allSkeletons = new Skeleton[skeletonCount];
@@ -252,39 +254,70 @@ namespace FaceTrackingBasics
 
 
             //_______SKeleton_________
-
-            using (var skeletonFrame = allFramesReadyEventArgs.OpenSkeletonFrame())
+            if (PictureChanged == false)
             {
 
 
-                //Get a skeleton
-                Skeleton first = GetFirstSkeleton(allFramesReadyEventArgs);
-                if (first != null)
-                {
-                    ProcessGesture(
-                        first.Joints[JointType.Head], 
-                        first.Joints[JointType.HandLeft], 
-                        first.Joints[JointType.HandRight],
-                        first.Joints[JointType.HipCenter]
 
-                        );
+                using (var skeletonFrame = allFramesReadyEventArgs.OpenSkeletonFrame())
+                {
+
+
+                    var obj = new object();
+                    //Get a skeleton
+                    Skeleton first = GetFirstSkeleton(allFramesReadyEventArgs);
+                    if (first != null)
+                    {
+
+                        Monitor.Enter(obj);
+                        try
+                        {
+                            ProcessGesture(
+                            first.Joints[JointType.Head],
+                            first.Joints[JointType.HandLeft],
+                            first.Joints[JointType.HandRight],
+                            first.Joints[JointType.HipCenter]
+
+                            );
+                        }
+                        finally
+                        {
+                            Monitor.Exit(obj);
+                        }
+                    }
                 }
-            }     
+            
+            }
         }
+
+ 
+
 
         // Adding the Gestures
         private void ProcessGesture(Joint head, Joint handleft, Joint handright, Joint hipcenter)
         {
             
            
-
-            if (handright.Position.Y > head.Position.Y)
+         
+            if (handright.Position.Y > head.Position.Y&& PictureChanged==false)
             {
+                
+                Thread.Sleep(1000);
+                NextPicture();
 
-                MessageBox.Show("hipcenter y" + hipcenter.Position.X + "hipcenter y" + hipcenter.Position.Y);
-                //MessageBox.Show("handleft x" + handleft.Position.X + "handleft y" + handleft.Position.Y);
+//                while (DateTime.UtcNow - startTime < TimeSpan.FromMilliseconds(1500))
+//                {
+//
+//                }
+                PictureChanged = false;
             }
-
+            if (handleft.Position.Y > head.Position.Y && PictureChanged == false)
+            {
+                Thread.Sleep(1000);
+                LastPicture();  
+            }
+            
+          
             //if (handright.Position.X < hipcenter.Position.X)
             //{
             //    MessageBox.Show("Your right hand is over spine");
@@ -367,7 +400,6 @@ namespace FaceTrackingBasics
                 MessageBox.Show("Du må koble til en kinect enhet");
                 return;
             }
-            faceTrackingViewer.setXAndY();
             int colorWidth = sensorChooser.Kinect.ColorStream.FrameWidth;
             int colorHeight = sensorChooser.Kinect.ColorStream.FrameHeight;
 
@@ -376,8 +408,8 @@ namespace FaceTrackingBasics
             DrawingVisual dv = new DrawingVisual();
             using (DrawingContext dc = dv.RenderOpen())
             {
-                VisualBrush facePhotoBrush = new VisualBrush(ColorImage);
-                dc.DrawRectangle(facePhotoBrush, null, new Rect(new Point(), new Size(colorWidth, colorHeight)));
+//                VisualBrush facePhotoBrush = new VisualBrush(ColorImage);
+//                dc.DrawRectangle(facePhotoBrush, null, new Rect(new Point(), new Size(colorWidth, colorHeight)));
 
                 //VisualBrush maskBrush = new VisualBrush(faceTrackingViewer);
                 //dc.DrawRectangle(maskBrush, null, new Rect(new Point(FaceTrackingViewer.x, FaceTrackingViewer.y), new Size(faceWidth, faceHeight)));
@@ -413,32 +445,17 @@ namespace FaceTrackingBasics
             MyText.Text = "Loggin nr: " + logginNr;
             logginNr++;
         }
-
-        private void ButtonClicked(object sender, RoutedEventArgs e)
+        private void NextPicture()
         {
-            PersonInn();
-        }
-  
-
-        private void LoggOutClicked(object sender, RoutedEventArgs e)
-        {
-            PersonUt();
-
-        }
-
-        private void NesteClicked(object sender, RoutedEventArgs e)
-        {
-            
-
             //var filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
-            if (i == filesindirectory.Length-1)
+            if (i == filesindirectory.Length - 1)
             {
                 i = -1;
             }
-           
-                i++;
-           
-            
+
+            i++;
+
+
             try
             {
                 var bi = new BitmapImage();
@@ -461,9 +478,9 @@ namespace FaceTrackingBasics
             }
         }
 
-        private void ForgjeClicked(object sender, RoutedEventArgs e)
+        private void LastPicture()
         {
-           // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
+            // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
             if (i == 0)
             {
                 //Må kanskje være -1
@@ -490,6 +507,30 @@ namespace FaceTrackingBasics
                 Bilde1.Visibility = Visibility.Visible;
                 Debug.WriteLine("Prøvde å lese noe annet enn en bildefil");
             }
+        }
+        private void ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            PersonInn();
+        }
+  
+
+        private void LoggOutClicked(object sender, RoutedEventArgs e)
+        {
+            PersonUt();
+
+        }
+
+        private void NesteClicked(object sender, RoutedEventArgs e)
+        {
+
+            NextPicture();
+
+        }
+
+        private void LastClicked(object sender, RoutedEventArgs e)
+        {
+            LastPicture();
+            
         }
 
         private void LoggMeOutClicked(object sender, RoutedEventArgs e)

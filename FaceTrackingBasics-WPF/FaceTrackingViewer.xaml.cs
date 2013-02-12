@@ -33,7 +33,7 @@ namespace FaceTrackingBasics
         private const uint MaxMissedFrames = 100;
         public static int x = 0;
         public static int y = 0;
-        public static bool buttonIsPressed = false;
+        
 
         private readonly Dictionary<int, SkeletonFaceTracker> trackedSkeletons = new Dictionary<int, SkeletonFaceTracker>();
 
@@ -58,11 +58,7 @@ namespace FaceTrackingBasics
         {
             this.Dispose(false);
         }
-        public void setXAndY()
-        {
-          
-            buttonIsPressed = true;
-        }
+ 
 
         public KinectSensor Kinect
         {

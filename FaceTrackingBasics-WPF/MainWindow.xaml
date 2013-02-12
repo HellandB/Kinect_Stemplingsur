@@ -39,7 +39,8 @@
             <Grid>
                 <Image x:Name="Bilde1" Visibility="Hidden"  Width="Auto" Height="Auto" HorizontalAlignment="Center"  VerticalAlignment="Center"   />
                 <Image Name="ColorImage"  Width="auto" Height="auto"   />
-                <local:FaceTrackingViewer x:Name="faceTrackingViewer"  Width="auto" Height="auto"  />
+<!--                Trenger ikke å se ansiktsmasken nå. kommenterte vekk 3 punkter i cs-fila-->
+               <local:FaceTrackingViewer x:Name="faceTrackingViewer"  Width="auto" Height="auto"  />
             </Grid>
         </DockPanel>
         
@@ -47,7 +48,7 @@
             <Button x:Name="LoggInnKnapp" Content="Logg Inn" DockPanel.Dock="Left" Margin="0,0,0,0"  Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="ButtonClicked" Height="75"/>
             <Button x:Name="LoggUtKnapp" Content="Logg Ut"  DockPanel.Dock="Right" Margin="0,0,0,0"  Width="358" Background="#FF46F020" FontFamily="Sylfaen" FontWeight="Bold" FontSize="36" Padding="4,1" Click="LoggOutClicked" Height="75"/>    
             <Grid>
-                <Button x:Name="ForgjeButton" Content="Forgje"  Width="75" Height="25" Visibility="Hidden" Click="ForgjeClicked" Margin="29,19,188.8,35.2"/>
+                <Button x:Name="ForgjeButton" Content="Forgje"  Width="75" Height="25" Visibility="Hidden" Click="LastClicked" Margin="29,19,188.8,35.2"/>
                 <Button x:Name="LoggMeOut"  Content="Logg ut"   Width="75" Height="25" Visibility="Hidden" Click="LoggMeOutClicked" Margin="29,44,188.8,10.2"/>
                 <Button x:Name="AvbrytButton" Content="Avbryt"    Width="75" Height="25" Visibility="Hidden" Click="AvbrytClicked" Margin="190,44,27.8,10.2"/>
                 <Button x:Name="NesteButton" Content="Neste"      Width="75" Height="25" Visibility="Hidden" Click="NesteClicked" Margin="190,19,27.8,35.2"/>
