@@ -408,8 +408,8 @@ namespace FaceTrackingBasics
             DrawingVisual dv = new DrawingVisual();
             using (DrawingContext dc = dv.RenderOpen())
             {
-//                VisualBrush facePhotoBrush = new VisualBrush(ColorImage);
-//                dc.DrawRectangle(facePhotoBrush, null, new Rect(new Point(), new Size(colorWidth, colorHeight)));
+                VisualBrush facePhotoBrush = new VisualBrush(ColorImage);
+                dc.DrawRectangle(facePhotoBrush, null, new Rect(new Point(), new Size(colorWidth, colorHeight)));
 
                 //VisualBrush maskBrush = new VisualBrush(faceTrackingViewer);
                 //dc.DrawRectangle(maskBrush, null, new Rect(new Point(FaceTrackingViewer.x, FaceTrackingViewer.y), new Size(faceWidth, faceHeight)));
