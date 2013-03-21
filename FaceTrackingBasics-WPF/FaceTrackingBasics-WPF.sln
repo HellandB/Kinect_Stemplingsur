@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Kinect.Toolkit", "..\Microsoft.Kinect.Toolkit\Microsoft.Kinect.Toolkit.csproj", "{C6F9C31B-6130-4443-A5CC-EF0664552ECD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Kinect.Toolkit.FaceTracking", "..\Microsoft.Kinect.Toolkit.FaceTracking\Microsoft.Kinect.Toolkit.FaceTracking.csproj", "{1BCF9CEE-DF01-430E-B49D-41A9A88963EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C6F9C31B-6130-4443-A5CC-EF0664552ECD} = {C6F9C31B-6130-4443-A5CC-EF0664552ECD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechBasics-WPF", "..\SpeechBasics-WPF\SpeechBasics-WPF.csproj", "{9BE50D83-C55B-4836-AEE5-A076C8C27173}"
 EndProject

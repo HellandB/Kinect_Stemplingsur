@@ -143,12 +143,12 @@ namespace FaceTrackingBasics
 
 
                 SpeechEngine = new SpeechRecognitionEngine(ri);
-                var directions = new Choices();
-                directions.Add(new SemanticResultValue("inn", "INN"));
-                directions.Add(new SemanticResultValue("ut", "UT"));
+                var voiceCommands = new Choices();
+                voiceCommands.Add(new SemanticResultValue("inn", "INN"));
+                voiceCommands.Add(new SemanticResultValue("ut", "UT"));
 
                 var gb = new GrammarBuilder {Culture = ri.Culture};
-                gb.Append(directions);
+                gb.Append(voiceCommands);
                 var g = new Grammar(gb);
                 SpeechEngine.LoadGrammar(g);
 
