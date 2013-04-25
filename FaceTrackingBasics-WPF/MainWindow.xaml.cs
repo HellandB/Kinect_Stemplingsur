@@ -15,7 +15,6 @@ namespace FaceTrackingBasics
     using System.Globalization;
     using System.IO;
     using System.Linq;
-    using System.Windows.Controls;
     using System.Windows;
     using System.Windows.Data;
     using System.Windows.Media;
@@ -66,7 +65,7 @@ namespace FaceTrackingBasics
             sensorChooser.Start();
 
             faceTrackingViewer.SetBinding(FaceTrackingViewer.KinectProperty, faceTrackingViewerBinding);
-            getDirectory();
+            GetDirectory();
            
         }
 
@@ -184,8 +183,8 @@ namespace FaceTrackingBasics
         /// Handler for recognized speech events.
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            const double ConfidenceThreshold = 0.4;
-            if (e.Result.Confidence >= ConfidenceThreshold)
+            const double confidenceThreshold = 0.4;
+            if (e.Result.Confidence >= confidenceThreshold)
             {
                switch (e.Result.Semantics.Value.ToString())
                {
@@ -199,7 +198,7 @@ namespace FaceTrackingBasics
             }
         }
 
-        private void getDirectory()
+        private void GetDirectory()
         {
             MyPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             FilesInDirectory = Directory.GetFiles(MyPhotos, "*.png");
@@ -330,7 +329,7 @@ namespace FaceTrackingBasics
         {
             ColorImage.Visibility = Visibility.Hidden;
             InfoText.Text = "Bilde " + PictureNumber;  
-            getDirectory();
+            GetDirectory();
 
             PictureNumber = 0;
 
@@ -341,7 +340,7 @@ namespace FaceTrackingBasics
             }
             try
             {
-                BitmapImage bi = new BitmapImage();
+                var bi = new BitmapImage();
                 bi.BeginInit();
                 bi.UriSource = new Uri(FilesInDirectory[0], UriKind.RelativeOrAbsolute);
                 bi.EndInit();
