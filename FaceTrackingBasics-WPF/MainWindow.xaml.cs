@@ -153,8 +153,6 @@ namespace FaceTrackingBasics
                 SpeechEngine.LoadGrammar(g);
 
                 SpeechEngine.SpeechRecognized += SpeechRecognized;
-                SpeechEngine.SpeechRecognitionRejected += SpeechRejected;
-
                 SpeechEngine.SetInputToAudioStream(newSensor.AudioSource.Start(),
                                                    new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2,
                                                                              null));
@@ -178,25 +176,15 @@ namespace FaceTrackingBasics
             if (SpeechEngine != null)
             {
                 SpeechEngine.SpeechRecognized -= SpeechRecognized;
-                SpeechEngine.SpeechRecognitionRejected -= SpeechRejected;
                 SpeechEngine.RecognizeAsyncStop();
             }
         }
-        /// Remove any highlighting from recognition instructions.
-//        private void ClearRecognitionHighlights()
-//        {
-//            foreach (Span span in recognitionSpans)
-//            {
-//                
-//                span.FontWeight = FontWeights.Normal;
-//            }
-//        }
+
 
         /// Handler for recognized speech events.
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             const double ConfidenceThreshold = 0.4;
-//            ClearRecognitionHighlights();
             if (e.Result.Confidence >= ConfidenceThreshold)
             {
                switch (e.Result.Semantics.Value.ToString())
@@ -210,10 +198,7 @@ namespace FaceTrackingBasics
                } 
             }
         }
-        private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
-        {
-//            ClearRecognitionHighlights();
-        }
+
         private void getDirectory()
         {
             MyPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
@@ -254,7 +239,7 @@ namespace FaceTrackingBasics
             }
 
 
-            //_______SKeleton_________
+            //_______Skeleton_________
             //Only track skeleton when ColorImage is hidden.
             if (!ColorImage.IsVisible)
             {
@@ -344,9 +329,7 @@ namespace FaceTrackingBasics
         private void PersonOut()
         {
             ColorImage.Visibility = Visibility.Hidden;
-            InfoText.Text = "Bilde " + PictureNumber;
-
-           // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
+            InfoText.Text = "Bilde " + PictureNumber;  
             getDirectory();
 
             PictureNumber = 0;
@@ -410,6 +393,7 @@ namespace FaceTrackingBasics
                 VisualBrush facePhotoBrush = new VisualBrush(ColorImage);
                 dc.DrawRectangle(facePhotoBrush, null, new Rect(new Point(), new Size(colorWidth, colorHeight)));
 
+                //Kode for å lagre bilde av bare "ansiktsmasken"
                 //VisualBrush maskBrush = new VisualBrush(faceTrackingViewer);
                 //dc.DrawRectangle(maskBrush, null, new Rect(new Point(FaceTrackingViewer.x, FaceTrackingViewer.y), new Size(faceWidth, faceHeight)));
 
@@ -422,11 +406,6 @@ namespace FaceTrackingBasics
             // create frame from the writable bitmap and add to encoder
             encoder.Frames.Add(BitmapFrame.Create(renderBitmap));
             string time = System.DateTime.Now.ToString("yyyyMMddHHmmss", CultureInfo.CurrentUICulture.DateTimeFormat);
-
-          
-
-            //string path = Path.Combine(@"C:\Users\RIKARD\Pictures\KinectBilder", "Person logged inn @-" + time + ".png");
-
             string path = Path.Combine(MyPhotos, "Person logged inn @-" + time + ".png");
 
             // write the new file to disk
@@ -446,8 +425,6 @@ namespace FaceTrackingBasics
         }
         private void NextPicture()
         {
-
-            //var filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
 
             //Preventing PictureNumber outofbound
             if (PictureNumber == FilesInDirectory.Length-1)
@@ -484,9 +461,6 @@ namespace FaceTrackingBasics
         private void PreviousPicture()
         {
 
-           
-            // string[] filesindirectory = Directory.GetFiles(@"C:\Users\RIKARD\Pictures\KinectBilder", "*.png");
-           
             //Preventing PictureNumber outofbound
             if (PictureNumber == 0)
             {
