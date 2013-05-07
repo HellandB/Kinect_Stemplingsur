@@ -183,7 +183,7 @@ namespace FaceTrackingBasics
         /// Handler for recognized speech events.
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            const double confidenceThreshold = 0.4;
+            const double confidenceThreshold = 0.7;
             if (e.Result.Confidence >= confidenceThreshold)
             {
                switch (e.Result.Semantics.Value.ToString())
