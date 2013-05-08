@@ -35,7 +35,7 @@ namespace FaceTrackingBasics
         private byte[] ColorImageData;
         private ColorImageFormat CurrentColorImageFormat ;
         private int PictureNumber = 0;
-        private int LogInNr = 1;
+        private int LoginNr = 1;
         private SpeechRecognitionEngine SpeechEngine;
         private string MyPhotos;
         private string[] FilesInDirectory;
@@ -352,8 +352,8 @@ namespace FaceTrackingBasics
             LoggUtKnapp.Visibility = Visibility.Hidden;
             LoggInnKnapp.Visibility = Visibility.Hidden;
             AvbrytButton.Visibility = Visibility.Hidden;
-            LoggMeOut.Visibility = Visibility.Hidden;
-            ForgjeButton.Visibility = Visibility.Hidden;
+            LogMeOut.Visibility = Visibility.Hidden;
+            ForrigeButton.Visibility = Visibility.Hidden;
             NesteButton.Visibility = Visibility.Hidden;
         }
 
@@ -368,8 +368,8 @@ namespace FaceTrackingBasics
 
             PhotoFrame.Visibility = Visibility.Hidden;
             AvbrytButton.Visibility = Visibility.Hidden;
-            LoggMeOut.Visibility = Visibility.Hidden;
-            ForgjeButton.Visibility = Visibility.Hidden;
+            LogMeOut.Visibility = Visibility.Hidden;
+            ForrigeButton.Visibility = Visibility.Hidden;
             NesteButton.Visibility = Visibility.Hidden;
 
             if (sensorChooser.Kinect == null)
@@ -411,8 +411,8 @@ namespace FaceTrackingBasics
             {
                 MessageBox.Show("Saving of file failed.");
             }
-            InfoText.Text = "Loggin nr: " + LogInNr;
-            LogInNr++;
+            InfoText.Text = "Loggin nr: " + LoginNr;
+            LoginNr++;
         }
         public void CopyPicture(String fileString)
         {
@@ -483,8 +483,8 @@ namespace FaceTrackingBasics
 
             PhotoFrame.Visibility = Visibility.Hidden;
             AvbrytButton.Visibility = Visibility.Hidden;
-            LoggMeOut.Visibility = Visibility.Hidden;
-            ForgjeButton.Visibility = Visibility.Hidden;
+            LogMeOut.Visibility = Visibility.Hidden;
+            ForrigeButton.Visibility = Visibility.Hidden;
             NesteButton.Visibility = Visibility.Hidden;
         }
         private void NextPicture()
@@ -517,7 +517,7 @@ namespace FaceTrackingBasics
                 bi.EndInit();
                 PhotoFrame.Source = bi;
                 PhotoFrame.Visibility = Visibility.Visible;
-                Debug.WriteLine("Prøvde å lese noe annet enn en bildefil");
+                
             }
             InfoText.Text = "Bilde " + PictureNumber;
            
