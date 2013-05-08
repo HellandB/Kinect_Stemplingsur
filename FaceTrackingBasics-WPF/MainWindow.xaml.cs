@@ -454,9 +454,10 @@ namespace FaceTrackingBasics
                 Console.WriteLine("Bildet finnes");
                 try
                 {
+                    ShowStartScreen();
                     File.Delete(fileString);
                     Console.WriteLine("Bildet ble slettet: " + fileString);
-                    NextPicture();
+                    
                     
                 }
                 catch (System.IO.IOException e)
@@ -465,6 +466,21 @@ namespace FaceTrackingBasics
                     Console.WriteLine("Bildet ble ikke slettet: ");
                     return;
                 }
+        }
+        private void ShowStartScreen()
+        {
+            InfoText.Text = "Inn";
+            PictureNumber = 0;
+            LoggInnKnapp.Visibility = Visibility.Visible;
+            LoggUtKnapp.Visibility = Visibility.Visible;
+            ColorImage.Visibility = Visibility.Visible;
+
+
+            PhotoFrame.Visibility = Visibility.Hidden;
+            AvbrytButton.Visibility = Visibility.Hidden;
+            LoggMeOut.Visibility = Visibility.Hidden;
+            ForgjeButton.Visibility = Visibility.Hidden;
+            NesteButton.Visibility = Visibility.Hidden;
         }
         private void NextPicture()
         {
@@ -534,13 +550,13 @@ namespace FaceTrackingBasics
             }
             InfoText.Text = "Bilde " + PictureNumber;
         }
-        private void ButtonClicked(object sender, RoutedEventArgs e)
+        private void LoginClicked(object sender, RoutedEventArgs e)
         {
             PersonIn();
         }
   
 
-        private void LoggOutClicked(object sender, RoutedEventArgs e)
+        private void LogoutClicked(object sender, RoutedEventArgs e)
         {
             PersonOut();
 
@@ -563,24 +579,15 @@ namespace FaceTrackingBasics
         {
             Console.WriteLine("Trying to move:");
                Console.WriteLine("" + FilesInDirectory[PictureNumber]);
-               CopyPicture(FilesInDirectory[PictureNumber]);
-              // DeletePicture(FilesInDirectory[PictureNumber]);
+            String fileToBeDeleted = FilesInDirectory[PictureNumber];
+          //  String fileToBeDeleted = @"C:\Users\RIKARD\Pictures\Face3.png";
+            // CopyPicture(FilesInDirectory[PictureNumber]);
+               DeletePicture(fileToBeDeleted);
         }
 
         private void AvbrytClicked(object sender, RoutedEventArgs e)
         {
-            InfoText.Text = "Inn";
-            PictureNumber = 0;
-            LoggInnKnapp.Visibility = Visibility.Visible;
-            LoggUtKnapp.Visibility = Visibility.Visible;
-            ColorImage.Visibility = Visibility.Visible;
-            
-
-            PhotoFrame.Visibility = Visibility.Hidden;
-            AvbrytButton.Visibility = Visibility.Hidden;
-            LoggMeOut.Visibility = Visibility.Hidden;
-            ForgjeButton.Visibility = Visibility.Hidden;
-            NesteButton.Visibility = Visibility.Hidden;
+           ShowStartScreen();
             
         }
     }
