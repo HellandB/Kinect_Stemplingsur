@@ -425,8 +425,13 @@ namespace FaceTrackingBasics
         }
         public void CopyPicture(String fileString)
         {
+
             string sourceFile = fileString;
-            string destinationFile = MyPhotos + @"\LoggedOut\face3.png";
+            int endLength = sourceFile.Length - 25;
+            string FileName = sourceFile.Substring(25, endLength);
+          
+         
+            string destinationFile = MyPhotos + @"\LoggedOut\" + FileName;
 
 
             // To copy a file to another location and  
@@ -445,6 +450,7 @@ namespace FaceTrackingBasics
 
         public void DeletePicture(String fileString)
         {
+            NextPicture();
             
             // Delete a file by using File class static method... 
             if (File.Exists(fileString))
@@ -454,7 +460,7 @@ namespace FaceTrackingBasics
                 Console.WriteLine("Bildet finnes");
                 try
                 {
-                    ShowStartScreen();
+                   
                     File.Delete(fileString);
                     Console.WriteLine("Bildet ble slettet: " + fileString);
                     
@@ -515,6 +521,7 @@ namespace FaceTrackingBasics
                 Debug.WriteLine("Prøvde å lese noe annet enn en bildefil");
             }
             InfoText.Text = "Bilde " + PictureNumber;
+            Console.WriteLine("Next Clicked");
         }
 
         private void PreviousPicture()
@@ -577,12 +584,8 @@ namespace FaceTrackingBasics
 
         private void LoggMeOutClicked(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Trying to move:");
-               Console.WriteLine("" + FilesInDirectory[PictureNumber]);
-            String fileToBeDeleted = FilesInDirectory[PictureNumber];
-          //  String fileToBeDeleted = @"C:\Users\RIKARD\Pictures\Face3.png";
-            // CopyPicture(FilesInDirectory[PictureNumber]);
-               DeletePicture(fileToBeDeleted);
+             CopyPicture(FilesInDirectory[PictureNumber]);
+         
         }
 
         private void AvbrytClicked(object sender, RoutedEventArgs e)
