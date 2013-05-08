@@ -31,7 +31,7 @@
                 <views:StemmeKontroll x:Name="Sk"  Margin="361,15,500,39.8"  />
                 <Image Width="100" Height="50"  Source="Images\Logo.png" Stretch="None" Margin="29,46,889,45"/>
                 <TextBlock Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="24" Margin="774,46,29,58"><Run Text="Kinect Stemplings"/><Run Language="nb-no" Text="ur"/></TextBlock>
-                <TextBlock x:Name="InfoText" Margin="370,105,420,0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="39" Foreground= "{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="24" Width="228" TextAlignment="Center"></TextBlock>
+                <TextBlock x:Name="InfoText" Margin="223,106,272,0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="39" Foreground= "{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="24" Width="523" TextAlignment="Center"></TextBlock>
             </Grid>
         </DockPanel>
 

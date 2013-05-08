@@ -406,7 +406,7 @@ namespace FaceTrackingBasics
             // create frame from the writable bitmap and add to encoder
             encoder.Frames.Add(BitmapFrame.Create(renderBitmap));
             string time = System.DateTime.Now.ToString("yyyyMMddHHmmss", CultureInfo.CurrentUICulture.DateTimeFormat);
-            string path = Path.Combine(MyPhotos, "Person logged inn @-" + time + ".png");
+            string path = Path.Combine(MyPhotos, "loggin@-" + time + ".png");
 
             // write the new file to disk
             try
@@ -443,12 +443,15 @@ namespace FaceTrackingBasics
             try
             {
                 File.Copy(sourceFile, destinationFile, true);
+                InfoText.Text = "Ha en god dag! " + FileName;
+                
             }
             catch (IOException)
             {
                 Console.WriteLine("Kopiering feilet!");
                
             }
+
 
 
         } public void DeleteDouplicates()
@@ -528,7 +531,7 @@ namespace FaceTrackingBasics
                 Debug.WriteLine("Prøvde å lese noe annet enn en bildefil");
             }
             InfoText.Text = "Bilde " + PictureNumber;
-            Console.WriteLine("Next Clicked");
+           
         }
 
         private void PreviousPicture()
