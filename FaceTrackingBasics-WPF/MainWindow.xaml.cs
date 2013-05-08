@@ -385,10 +385,6 @@ namespace FaceTrackingBasics
                 VisualBrush facePhotoBrush = new VisualBrush(ColorImage);
                 dc.DrawRectangle(facePhotoBrush, null, new Rect(new Point(), new Size(colorWidth, colorHeight)));
 
-                //Kode for å lagre bilde av bare "ansiktsmasken"
-                //VisualBrush maskBrush = new VisualBrush(faceTrackingViewer);
-                //dc.DrawRectangle(maskBrush, null, new Rect(new Point(FaceTrackingViewer.x, FaceTrackingViewer.y), new Size(faceWidth, faceHeight)));
-
             }
             renderBitmap.Render(dv);
 
@@ -429,7 +425,6 @@ namespace FaceTrackingBasics
          
             string destinationFile = MyPhotos + @"\LoggedOut\" + FileName;
 
-
             // To copy a file to another location and  
             // overwrite the destination file if it already exists. 
             try
@@ -448,10 +443,7 @@ namespace FaceTrackingBasics
 
 
 
-        } public void DeleteDouplicates()
-        {
-            
-        }
+        } 
 
         public void DeletePicture(String fileString)
         {
@@ -534,7 +526,6 @@ namespace FaceTrackingBasics
             //Preventing PictureNumber outofbound
             if (PictureNumber == 0)
             {
-                //Må kanskje være -1
                 PictureNumber = FilesInDirectory.Length;
             }
 
