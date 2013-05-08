@@ -40,6 +40,7 @@ namespace FaceTrackingBasics
         private string MyPhotos;
         private string[] FilesInDirectory;
         private Binding faceTrackingViewerBinding;
+        private Boolean ableToRemove = false;
   
         //gestures
         const int skeletonCount = 6;
@@ -197,6 +198,7 @@ namespace FaceTrackingBasics
                        PersonOut();
                        break;
                    case"SLETT":
+                       if(ableToRemove)
                        CopyPicture(FilesInDirectory[PictureNumber]);
                        break;
                } 
@@ -320,6 +322,7 @@ namespace FaceTrackingBasics
  
         private void PersonOut()
         {
+            ableToRemove = true;
             ColorImage.Visibility = Visibility.Hidden;
             InfoText.Text = "Bilde " + PictureNumber;  
             GetDirectory();
@@ -358,7 +361,7 @@ namespace FaceTrackingBasics
 
         private void PersonIn()
         {
-            
+            ableToRemove = false;
             ColorImage.Visibility = Visibility.Visible;
             LoggInnKnapp.Visibility = Visibility.Visible;
             LoggUtKnapp.Visibility = Visibility.Visible;
@@ -471,7 +474,7 @@ namespace FaceTrackingBasics
         }
         private void ShowStartScreen()
         {
-            
+            ableToRemove = false;
             PictureNumber = 0;
             LoggInnKnapp.Visibility = Visibility.Visible;
             LoggUtKnapp.Visibility = Visibility.Visible;
@@ -522,7 +525,7 @@ namespace FaceTrackingBasics
 
         private void PreviousPicture()
         {
-
+            
             //Preventing PictureNumber outofbound
             if (PictureNumber == 0)
             {
