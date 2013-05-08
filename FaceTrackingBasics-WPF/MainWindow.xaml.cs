@@ -119,8 +119,8 @@ namespace FaceTrackingBasics
                         newSensor.SkeletonStream.EnableTrackingInNearRange = false;
                     }
 
-                    newSensor.SkeletonStream.TrackingMode = SkeletonTrackingMode.Seated;
-                    newSensor.SkeletonStream.Enable();
+                    newSensor.SkeletonStream.TrackingMode = SkeletonTrackingMode.Default;
+                    newSensor.SkeletonStream.Enable(); 
                     newSensor.AllFramesReady += KinectSensorOnAllFramesReady;
                 }
                 catch (InvalidOperationException)
@@ -450,6 +450,7 @@ namespace FaceTrackingBasics
                
             }
 
+
         } public void DeleteDouplicates()
         {
             
@@ -457,8 +458,7 @@ namespace FaceTrackingBasics
 
         public void DeletePicture(String fileString)
         {
-            NextPicture();
-            
+  
             // Delete a file by using File class static method... 
             if (File.Exists(fileString))
                 // Use a try block to catch IOExceptions, to 
