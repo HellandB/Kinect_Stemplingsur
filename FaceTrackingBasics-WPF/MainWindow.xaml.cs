@@ -202,6 +202,7 @@ namespace FaceTrackingBasics
         {
             MyPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             FilesInDirectory = Directory.GetFiles(MyPhotos, "*.png");
+
         }
 
    
@@ -422,6 +423,49 @@ namespace FaceTrackingBasics
             InfoText.Text = "Loggin nr: " + LogInNr;
             LogInNr++;
         }
+        public void CopyPicture(String fileString)
+        {
+            string sourceFile = fileString;
+            string destinationFile = MyPhotos + @"\LoggedOut\face3.png";
+
+
+            // To copy a file to another location and  
+            // overwrite the destination file if it already exists.
+            try
+            {
+                File.Copy(sourceFile, destinationFile, true);
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("Kopiering feilet!");
+               
+            }
+
+        }
+
+        public void DeletePicture(String fileString)
+        {
+            
+            // Delete a file by using File class static method... 
+            if (File.Exists(fileString))
+                // Use a try block to catch IOExceptions, to 
+                // handle the case of the file already being 
+                // opened by another process. 
+                Console.WriteLine("Bildet finnes");
+                try
+                {
+                    File.Delete(fileString);
+                    Console.WriteLine("Bildet ble slettet: " + fileString);
+                    NextPicture();
+                    
+                }
+                catch (System.IO.IOException e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Bildet ble ikke slettet: ");
+                    return;
+                }
+        }
         private void NextPicture()
         {
 
@@ -454,7 +498,7 @@ namespace FaceTrackingBasics
                 PhotoFrame.Visibility = Visibility.Visible;
                 Debug.WriteLine("Prøvde å lese noe annet enn en bildefil");
             }
-            InfoText.Text = "Neste bilde " + PictureNumber;
+            InfoText.Text = "Bilde " + PictureNumber;
         }
 
         private void PreviousPicture()
@@ -488,7 +532,7 @@ namespace FaceTrackingBasics
                 PhotoFrame.Visibility = Visibility.Visible;
                 Debug.WriteLine("Prøvde å lese noe annet enn en bildefil");
             }
-            InfoText.Text = "Forrige bilde " + PictureNumber;
+            InfoText.Text = "Bilde " + PictureNumber;
         }
         private void ButtonClicked(object sender, RoutedEventArgs e)
         {
@@ -517,7 +561,10 @@ namespace FaceTrackingBasics
 
         private void LoggMeOutClicked(object sender, RoutedEventArgs e)
         {
-
+            Console.WriteLine("Trying to move:");
+               Console.WriteLine("" + FilesInDirectory[PictureNumber]);
+               CopyPicture(FilesInDirectory[PictureNumber]);
+              // DeletePicture(FilesInDirectory[PictureNumber]);
         }
 
         private void AvbrytClicked(object sender, RoutedEventArgs e)
