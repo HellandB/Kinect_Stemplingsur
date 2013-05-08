@@ -48,7 +48,8 @@ namespace FaceTrackingBasics
         private enum Commands
         {
             Inn,
-            Ut
+            Ut,
+            Slett
         }
 
 
@@ -145,6 +146,7 @@ namespace FaceTrackingBasics
                 var voiceCommands = new Choices();
                 voiceCommands.Add(new SemanticResultValue("inn", "INN"));
                 voiceCommands.Add(new SemanticResultValue("ut", "UT"));
+                voiceCommands.Add(new SemanticResultValue("slett", "SLETT"));
 
                 var gb = new GrammarBuilder {Culture = ri.Culture};
                 gb.Append(voiceCommands);
@@ -193,6 +195,9 @@ namespace FaceTrackingBasics
                        break;
                    case"UT":
                        PersonOut();
+                       break;
+                   case"SLETT":
+                       CopyPicture(FilesInDirectory[PictureNumber]);
                        break;
                } 
             }
@@ -275,19 +280,6 @@ namespace FaceTrackingBasics
         // Processing the Gestures
         private void ProcessGesture(Joint head, Joint handleft, Joint handright, Joint hipcenter)
         {
-
-            //if (handright.Position.Y > head.Position.Y)
-            //{
-            //    Thread.Sleep(1000);
-            //    NextPicture();
-            //    PictureChanged = false;
-            //}
-
-            //if (handleft.Position.Y > head.Position.Y )
-            //{
-            //    Thread.Sleep(1000);
-            //    LastPicture();  
-            //}
 
             if (handleft.Position.X > hipcenter.Position.X)
             { 
