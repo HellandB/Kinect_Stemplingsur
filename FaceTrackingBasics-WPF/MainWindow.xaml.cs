@@ -351,10 +351,10 @@ namespace FaceTrackingBasics
 
             LoggUtKnapp.Visibility = Visibility.Hidden;
             LoggInnKnapp.Visibility = Visibility.Hidden;
-            AvbrytButton.Visibility = Visibility.Visible;
-            LoggMeOut.Visibility = Visibility.Visible;
-            ForgjeButton.Visibility = Visibility.Visible;
-            NesteButton.Visibility = Visibility.Visible;
+            AvbrytButton.Visibility = Visibility.Hidden;
+            LoggMeOut.Visibility = Visibility.Hidden;
+            ForgjeButton.Visibility = Visibility.Hidden;
+            NesteButton.Visibility = Visibility.Hidden;
         }
 
 
@@ -363,8 +363,8 @@ namespace FaceTrackingBasics
         {
             ableToRemove = false;
             ColorImage.Visibility = Visibility.Visible;
-            LoggInnKnapp.Visibility = Visibility.Visible;
-            LoggUtKnapp.Visibility = Visibility.Visible;
+            LoggInnKnapp.Visibility = Visibility.Hidden;
+            LoggUtKnapp.Visibility = Visibility.Hidden;
 
             PhotoFrame.Visibility = Visibility.Hidden;
             AvbrytButton.Visibility = Visibility.Hidden;
@@ -476,8 +476,8 @@ namespace FaceTrackingBasics
         {
             ableToRemove = false;
             PictureNumber = 0;
-            LoggInnKnapp.Visibility = Visibility.Visible;
-            LoggUtKnapp.Visibility = Visibility.Visible;
+            LoggInnKnapp.Visibility = Visibility.Hidden;
+            LoggUtKnapp.Visibility = Visibility.Hidden;
             ColorImage.Visibility = Visibility.Visible;
 
 
