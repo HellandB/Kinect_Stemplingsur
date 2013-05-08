@@ -431,11 +431,12 @@ namespace FaceTrackingBasics
 
 
             // To copy a file to another location and  
-            // overwrite the destination file if it already exists.
+            // overwrite the destination file if it already exists. 
             try
             {
                 File.Copy(sourceFile, destinationFile, true);
                 InfoText.Text = "Ha en god dag! " + FileName;
+
                 
             }
             catch (IOException)
@@ -443,6 +444,7 @@ namespace FaceTrackingBasics
                 Console.WriteLine("Kopiering feilet!");
                
             }
+            ShowStartScreen();
 
 
 
@@ -477,7 +479,7 @@ namespace FaceTrackingBasics
         }
         private void ShowStartScreen()
         {
-            InfoText.Text = "Inn";
+            
             PictureNumber = 0;
             LoggInnKnapp.Visibility = Visibility.Visible;
             LoggUtKnapp.Visibility = Visibility.Visible;
