@@ -429,7 +429,11 @@ namespace FaceTrackingBasics
             string sourceFile = fileString;
             int endLength = sourceFile.Length - 25;
             string FileName = sourceFile.Substring(25, endLength);
-          
+
+            if (!Directory.Exists(MyPhotos + @"\LoggedOut\"))
+            {
+                Directory.CreateDirectory(MyPhotos + @"\LoggedOut\");
+            }
          
             string destinationFile = MyPhotos + @"\LoggedOut\" + FileName;
 
@@ -446,6 +450,9 @@ namespace FaceTrackingBasics
                
             }
 
+        } public void DeleteDouplicates()
+        {
+            
         }
 
         public void DeletePicture(String fileString)
