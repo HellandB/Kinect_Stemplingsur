@@ -448,30 +448,7 @@ namespace FaceTrackingBasics
 
         } 
 
-        public void DeletePicture(String fileString)
-        {
-  
-            // Delete a file by using File class static method... 
-            if (File.Exists(fileString))
-                // Use a try block to catch IOExceptions, to 
-                // handle the case of the file already being 
-                // opened by another process. 
-                Console.WriteLine("Bildet finnes");
-                try
-                {
-                   
-                    File.Delete(fileString);
-                    Console.WriteLine("Bildet ble slettet: " + fileString);
-                    
-                    
-                }
-                catch (System.IO.IOException e)
-                {
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine("Bildet ble ikke slettet: ");
-                    return;
-                }
-        }
+     
         private void ShowStartScreen()
         {
             ableToRemove = false;
